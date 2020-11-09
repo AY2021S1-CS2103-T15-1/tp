@@ -2,9 +2,9 @@
 layout: page
 title: Developer Guide
 ---
-* Table of Contents
+* Table of Contents:
 {:toc}
-
+  
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Setting up, getting started**
@@ -245,11 +245,6 @@ The following activity diagram (Fig 1.8) summarises what happens when a user exe
 * The `Ui` component was selected to perform the showing/hiding of answers as it already had access to the various components in the GUI, hence preventing further coupling between the different components.
 * We decided to use `list` rather than `list all` to show all questions and answers as we wanted to maintain the original functionality of the `list` command.
 
-### \[Proposed\] Data archiving
-
-_{Explain here how the data archiving feature will be implemented}_
-
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## **Documentation, logging, testing, configuration, dev-ops**
@@ -295,8 +290,6 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 | `* *`  | user                                       | find questions by keywords     | locate the Q&A without having to go through the entire list of questions |
 | `* * `   | user                                       | tag questions to its topics    | organise the questions properly by topic                                 |
 | `*`   | organised user                             | archive questions I no longer need | keep my question book organised and updated                          |
-
-*{More to be added}*
 
 ### Use cases
 
@@ -511,30 +504,6 @@ testers are expected to do more *exploratory* testing.
     1. Test case: `find t/immune system`<br>
        Expected: QAndA(s) with the tag `immune system` are shown.
        
-### Deleting a QAndA
-
-1. Deleting a QAndA while all QAndAs are being shown
-
-   1. Prerequisites: List all QAndAs using the `list` command. Multiple QAndAs in the list.
-
-   1. Test case: `delete 1`<br>
-      Expected: First QAndA is deleted from the list. Details of the deleted QAndA shown in the result box.
-
-   1. Test case: `delete 0`<br>
-      Expected: No QAndA is deleted. Error details shown in the result box.
-
-   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
-      Expected: Similar to previous.
-
-1. Deleting QAndA while only certain QAndAs are being shown
-
-    1. Prerequisites: Multiple QAndAs with the word `heart` in the question. Find all QAndAs with `heart` in the 
-        question using the `find q/heart` command.
-        
-    1. Test case: `delete 2`<br>
-       Expected: Second QAndA is deleted from the list. Details of the deleted QAndA shown in the result box.
-       The window continues to display the remaining QAndAs with `heart` in the question.
-       
 ### Quizzing
 
 1. Starting a quiz
@@ -563,6 +532,30 @@ testers are expected to do more *exploratory* testing.
 **Note:** Remember to `endquiz` and achieve the prerequisites when starting a new test case.
 </div>
 
+### Deleting a QAndA
+
+1. Deleting a QAndA while all QAndAs are being shown
+
+   1. Prerequisites: List all QAndAs using the `list` command. Multiple QAndAs in the list.
+
+   1. Test case: `delete 1`<br>
+      Expected: First QAndA is deleted from the list. Details of the deleted QAndA shown in the result box.
+
+   1. Test case: `delete 0`<br>
+      Expected: No QAndA is deleted. Error details shown in the result box.
+
+   1. Other incorrect delete commands to try: `delete`, `delete x`, `...` (where x is larger than the list size)<br>
+      Expected: Similar to previous.
+
+1. Deleting QAndA while only certain QAndAs are being shown
+
+    1. Prerequisites: Multiple QAndAs with the word `heart` in the question. Find all QAndAs with `heart` in the 
+        question using the `find q/heart` command.
+        
+    1. Test case: `delete 2`<br>
+       Expected: Second QAndA is deleted from the list. Details of the deleted QAndA shown in the result box.
+       The window continues to display the remaining QAndAs with `heart` in the question.
+       
 ### Saving data
 
 1. Initial setup of data files
